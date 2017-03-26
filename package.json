@@ -1,0 +1,12 @@
+{
+  "name": "language-lfe",
+  "version": "0.1.0",
+  "private": true,
+  "description": "LFE (Lisp Flavored Erlang) support for Atom (converted from language-lisp)",
+  "repository": "https://github.com/adkelley/language-lfe",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {}
+}

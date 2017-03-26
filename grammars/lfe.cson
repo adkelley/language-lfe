@@ -1,0 +1,107 @@
+name: 'LFE'
+scopeName: 'source.lfe'
+fileTypes: [
+  'lfe'
+]
+foldingStartMarker: '\\(\\s*$'
+foldingStopMarker: '^\\s*\\)'
+patterns: [
+  {
+    match: '(;).*$\\n?'
+    captures:
+      1:
+        name: 'punctuation.definition.comment.lfe'
+    name: 'comment.line.semicolon.lfe'
+  }
+  {
+    match: '(\\b(?i:(defmodule|defun|defmacro))\\b)(\\s+)((\\w|\\-|\\!|\\?)*)'
+    captures:
+      2:
+        name: 'storage.type.function-type.lfe'
+      4:
+        name: 'entity.name.function.lfe'
+    name: 'meta.function.lfe'
+  }
+  {
+    match: '(#)(\\w|[\\\\+-=<>\'"&#])+'
+    captures:
+      1:
+        name: 'punctuation.definition.constant.lfe'
+    name: 'constant.character.lfe'
+  }
+  {
+    match: '(?:^|\\s|\\()(:|&)([a-zA-Z0-9\\#\\.\\-\\_\\+\\=\\>\\<\\/\\!\\?\\*\\[\\]\\{\\}]+)'
+    captures:
+      1:
+        name: 'punctuation.definition.constant.lfe'
+      2:
+        name: 'punctuation.definition.constant.lfe'
+    name: 'meta.definition.lfe'
+  }
+  {
+    match: '(\\*)(\\S*)(\\*)'
+    captures:
+      1:
+        name: 'punctuation.definition.variable.lfe'
+      3:
+        name: 'punctuation.definition.variable.lfe'
+    name: 'variable.other.global.lfe'
+  }
+  {
+    match: '(\\+)(\\S*)(\\+)'
+    captures:
+      1:
+        name: 'punctuation.definition.constant.lfe'
+      3:
+        name: 'punctuation.definition.constant.lfe'
+    name: 'constant.other.global.lfe'
+  }
+  {
+    match: '\\b(?i:let|let\\*|case|do|dolist|dotimes|loop|if|cond|when|unless)\\b'
+    name: 'keyword.control.lfe'
+  }
+  {
+    match: '\\b(?i:eq|eql|equal|neq|and|or|not)\\b'
+    name: 'keyword.operator.lfe'
+  }
+  {
+    match: '\\b(?i:t|nil)\\b'
+    name: 'constant.language.boolean.nil.lfe'
+  }
+  {
+    match: '\\b(?i:register|receive|spawn|cons|car|cdr|lambda|format|print|setq|setf|quote|eval|append|list|listp|memberp|load|progn|apply|export|lfe_io:)\\b'
+    name: 'support.function.lfe'
+  }
+  {
+    match: '\\b((([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)\\b'
+    name: 'constant.numeric.lfe'
+  }
+  {
+    begin: '"'
+    beginCaptures:
+      0:
+        name: 'punctuation.definition.string.begin.lfe'
+    end: '"'
+    endCaptures:
+      0:
+        name: 'punctuation.definition.string.end.lfe'
+    name: 'string.quoted.double.lfe'
+    patterns: [
+      {
+        match: '\\\\.'
+        name: 'constant.character.escape.lfe'
+      }
+    ]
+  }
+  {
+    begin: '#\\|'
+    beginCaptures:
+      0:
+        name: 'punctuation.definition.comment.begin.lfe'
+    end: '\\|#'
+    endCaptures:
+      0:
+        name: 'punctuation.definition.comment.end.lfe'
+    name: 'comment.block.hash.lfe'
+  }
+]
