@@ -1,5 +1,5 @@
 name: 'LFE'
-scopeName: 'source.lfe'
+scopeName: 'source.lisp'
 fileTypes: [
   'lfe'
 ]
@@ -11,85 +11,85 @@ patterns: [
     captures:
       1:
         name: 'punctuation.definition.comment.lfe'
-    name: 'comment.line.semicolon.lfe'
+    name: 'comment.line.semicolon.lisp'
   }
   {
     match: '(\\b(?i:(defmodule|defun|defmacro))\\b)(\\s+)((\\w|\\-|\\!|\\?)*)'
     captures:
       2:
-        name: 'storage.type.function-type.lfe'
+        name: 'storage.type.function-type.lisp'
       4:
-        name: 'entity.name.function.lfe'
-    name: 'meta.function.lfe'
+        name: 'entity.name.function.lisp'
+    name: 'meta.function.lisp'
   }
   {
     match: '(#)(\\w|[\\\\+-=<>\'"&#])+'
     captures:
       1:
-        name: 'punctuation.definition.constant.lfe'
-    name: 'constant.character.lfe'
+        name: 'punctuation.definition.constant.lisp'
+    name: 'constant.character.lisp'
   }
   {
     match: '(?:^|\\s|\\()(:|&)([a-zA-Z0-9\\#\\.\\-\\_\\+\\=\\>\\<\\/\\!\\?\\*\\[\\]\\{\\}]+)'
     captures:
       1:
-        name: 'punctuation.definition.constant.lfe'
+        name: 'punctuation.definition.constant.lisp'
       2:
-        name: 'punctuation.definition.constant.lfe'
-    name: 'meta.definition.lfe'
+        name: 'punctuation.definition.constant.lisp'
+    name: 'meta.definition.lisp'
   }
   {
     match: '(\\*)(\\S*)(\\*)'
     captures:
       1:
-        name: 'punctuation.definition.variable.lfe'
+        name: 'punctuation.definition.variable.lisp'
       3:
-        name: 'punctuation.definition.variable.lfe'
-    name: 'variable.other.global.lfe'
+        name: 'punctuation.definition.variable.lisp'
+    name: 'variable.other.global.lisp'
   }
   {
     match: '(\\+)(\\S*)(\\+)'
     captures:
       1:
-        name: 'punctuation.definition.constant.lfe'
+        name: 'punctuation.definition.constant.lisp'
       3:
-        name: 'punctuation.definition.constant.lfe'
-    name: 'constant.other.global.lfe'
+        name: 'punctuation.definition.constant.lisp'
+    name: 'constant.other.global.lisp'
   }
   {
     match: '\\b(?i:let|let\\*|case|do|dolist|dotimes|loop|if|cond|when|unless)\\b'
-    name: 'keyword.control.lfe'
+    name: 'keyword.control.lisp'
   }
   {
     match: '\\b(?i:eq|eql|equal|neq|and|or|not)\\b'
-    name: 'keyword.operator.lfe'
+    name: 'variable.operator.lisp'
   }
   {
     match: '\\b(?i:t|nil)\\b'
-    name: 'constant.language.boolean.nil.lfe'
+    name: 'constant.language.boolean.nil.lisp'
   }
   {
-    match: '\\b(?i:register|receive|spawn|cons|car|cdr|lambda|format|print|setq|setf|quote|eval|append|list|listp|memberp|load|progn|apply|export|lfe_io:)\\b'
-    name: 'support.function.lfe'
+    match: '\\b(?i:map-update|map|tuple|register|receive|spawn|cons|car|cdr|lambda|format|print|setq|setf|quote|eval|append|list|listp|memberp|load|progn|apply|export|lfe_io:)\\b'
+    name: 'support.function.lisp'
   }
   {
     match: '\\b((([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)\\b'
-    name: 'constant.numeric.lfe'
+    name: 'constant.numeric.lisp'
   }
   {
     begin: '"'
     beginCaptures:
       0:
-        name: 'punctuation.definition.string.begin.lfe'
+        name: 'punctuation.definition.string.begin.lisp'
     end: '"'
     endCaptures:
       0:
-        name: 'punctuation.definition.string.end.lfe'
-    name: 'string.quoted.double.lfe'
+        name: 'punctuation.definition.string.end.lisp'
+    name: 'string.quoted.double.lisp'
     patterns: [
       {
         match: '\\\\.'
-        name: 'constant.character.escape.lfe'
+        name: 'constant.character.escape.lisp'
       }
     ]
   }
@@ -97,11 +97,11 @@ patterns: [
     begin: '#\\|'
     beginCaptures:
       0:
-        name: 'punctuation.definition.comment.begin.lfe'
+        name: 'punctuation.definition.comment.begin.lisp'
     end: '\\|#'
     endCaptures:
       0:
-        name: 'punctuation.definition.comment.end.lfe'
+        name: 'punctuation.definition.comment.end.lisp'
     name: 'comment.block.hash.lfe'
   }
 ]
